@@ -20,7 +20,9 @@
   "dependencies": {
     "flatiron": "~0.3.8",
     "nedb": "~0.8.6",
-    "colors": "~0.6.1"
+    "colors": "~0.6.1",
+    "userhome": "~0.1.0",
+    "pkginfo": "~0.3.0"
   },
   "devDependencies": {
     "mocha": "~1.12.0",
