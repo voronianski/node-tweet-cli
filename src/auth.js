@@ -20,10 +20,10 @@ exports.getRequestToken = function (callback) {
 };
 
 exports.getAccessToken = function (requestToken, requestTokenSecret, pin, callback) {
-	oauth.getOAuthAccessToken(function (err, accessToken, accessTokenSecret) {
+	oauth.getOAuthAccessToken(requestToken, requestTokenSecret, pin, function (err, accessToken, accessTokenSecret, params) {
 		if (err) {
 			return callback(err);
 		}
-		callback(null, accessToken, accessTokenSecret);
+		callback(null, accessToken, accessTokenSecret, params);
 	});
 };

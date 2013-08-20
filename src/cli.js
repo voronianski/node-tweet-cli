@@ -20,6 +20,10 @@ app.use(flatiron.plugins.cli, {
 		version: {
 			alias: 'v',
 			description: 'print version of tweet-cli app and exit'
+		},
+		debug: {
+			alias: 'd',
+			description: 'print full traceback when error occurs'
 		}
 	}
 });
