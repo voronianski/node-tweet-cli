@@ -18,6 +18,7 @@ module.exports = [
 	'                                        '.cyan,
 	'Simple tool for making tweets from the shell',
 	'https://github com/voronianski/node-tweet-cli',
+	'author: <dmitri.voronianski@gmail.com>',
 	'',
 	'Usage:'.cyan.bold.underline,
 	'',
