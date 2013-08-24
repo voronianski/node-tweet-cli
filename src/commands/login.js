@@ -5,7 +5,7 @@ var auth = require('../auth');
 var db = require('../db');
 var errorHandler = require('../errors');
 
-var login = module.exports = function () {
+var login = function () {
 	cli.log.info('Start sending request to https://twitter.com');
 
 	auth.getRequestToken(function (err, requestToken, requestTokenSecret) {
@@ -22,8 +22,11 @@ var login = module.exports = function () {
 
 		cli.log.info('Enter received PIN below:');
 		cli.prompt.get('pin', function (err, result) {
-			var pin = result.pin.toString().trim();
+			if (err) {
+				return errorHandler(err);
+			}
 
+			var pin = result && result.pin.toString().trim();
 			auth.getAccessToken(requestToken, requestTokenSecret, pin, function (err, accessToken, accessTokenSecret, params) {
 				if (err && err.statusCode === 401) {
 					return errorHandler(err, 'Sorry, but PIN number is incorrect');
@@ -39,7 +42,7 @@ var login = module.exports = function () {
 					active: true
 				};
 
-				db.saveActiveUser(doc, function (err, saved) {
+				db.saveActiveUser(doc, function (err) {
 					if (err) {
 						return errorHandler(err, 'Error occured while saving user');
 					}
@@ -64,3 +67,5 @@ login.usage = [
 	'',
 	' tweet login'
 ];
+
+module.exports = login;
