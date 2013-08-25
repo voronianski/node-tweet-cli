@@ -2,7 +2,7 @@
   "name": "node-tweet-cli",
   "version": "0.0.1",
   "description": "Tweet from your shell directly!",
-  "main": "./src/index.js",
+  "main": "./src/cli.js",
   "bin": "./bin/tweet.js",
   "scripts": {
     "test": ""
@@ -13,7 +13,8 @@
     "tweet",
     "cli",
     "shell",
-    "bash"
+    "bash",
+    "zsh"
   ],
   "author": "Dmitri Voronianski",
   "license": "MIT",
