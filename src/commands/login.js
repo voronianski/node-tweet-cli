@@ -1,8 +1,8 @@
 var opener = require('opener');
 var cli = require('../cli');
-var auth = require('../auth');
-var db = require('../db');
-var errorHandler = require('../errors');
+var auth = require('../common/auth');
+var db = require('../common/db');
+var errorHandler = require('../common/errors');
 
 var login = function () {
 	cli.log.info('Start sending request to https://twitter.com');

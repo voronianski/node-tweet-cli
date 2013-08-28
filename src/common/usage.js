@@ -1,5 +1,3 @@
-var colors = require('colors');
-
 module.exports = [
 	'                                        '.cyan,
 	'                             IIII       '.cyan,

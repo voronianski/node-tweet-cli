@@ -15,7 +15,7 @@ require('pkginfo')(module, 'name', 'version');
 app.use(flatiron.plugins.cli, {
 	version: true,
 	source: path.join(__dirname, 'commands'),
-	usage: require('./usage.js'),
+	usage: require('./common/usage.js'),
 	argv: {
 		version: {
 			alias: 'v',

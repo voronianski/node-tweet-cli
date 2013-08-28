@@ -1,7 +1,7 @@
 var request = require('request');
 var cli = require('../cli');
-var db = require('../db');
-var errorHandler = require('../errors');
+var db = require('../common/db');
+var errorHandler = require('../common/errors');
 
 var create = function () {
 	db.getActiveUser(function (err, user) {

@@ -1,4 +1,4 @@
-var cli = require('./cli');
+var cli = require('../cli');
 
 module.exports = function (error, message) {
 	error = JSON.stringify(error, '', '\t');
