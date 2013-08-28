@@ -1,5 +1,5 @@
-var request = require('request');
 var cli = require('../cli');
+var api = require('../common/api');
 var db = require('../common/db');
 var errorHandler = require('../common/errors');
 
@@ -20,7 +20,12 @@ var create = function () {
 				return errorHandler(err);
 			}
 
-			cli.log.info(result.tweet.toString());
+			api.post(result.tweet.toString(), user, function (err, response, body) {
+				if (err) {
+					return errorHandler(err);
+				}
+				console.dir(body);
+			});
 		});
 	});
 };
