@@ -1,4 +1,3 @@
-var colors = require('colors');
 var opener = require('opener');
 var cli = require('../cli');
 var auth = require('../auth');
