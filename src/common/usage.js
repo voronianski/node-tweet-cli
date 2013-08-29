@@ -27,5 +27,8 @@ module.exports = [
 	' tweet logout',
 	'',
 	'To start tweeting'.cyan,
-	' tweet create'
+	' tweet create',
+	'',
+	'To check what account do you use'.cyan,
+	' tweet whoami'
 ];
