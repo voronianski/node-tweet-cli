@@ -24,7 +24,11 @@ var create = function () {
 				if (err) {
 					return errorHandler(err);
 				}
-				console.dir(body);
+				if (body.errors) {
+					err = body.errors[0];
+					return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 140 characters.' : null));
+				}
+				cli.log.info('Success! Your tweet was published.');
 			});
 		});
 	});
