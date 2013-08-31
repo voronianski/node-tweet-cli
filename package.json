@@ -1,7 +1,7 @@
 {
   "name": "node-tweet-cli",
   "version": "0.0.1",
-  "description": "Tweet from your shell directly!",
+  "description": "Start making tweets from your shell directly",
   "main": "./src/cli.js",
   "bin": "./bin/tweet.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "twitter",
     "tweet",
     "cli",
+    "console",
     "shell",
     "bash",
     "zsh"
@@ -21,7 +22,7 @@
   "dependencies": {
     "flatiron": "~0.3.8",
     "nedb": "~0.8.6",
-    "colors": "~0.6.1",
+    "colors": "~0.6.2",
     "userhome": "~0.1.0",
     "pkginfo": "~0.3.0",
     "oauth": "~0.9.10",
