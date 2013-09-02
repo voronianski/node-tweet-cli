@@ -7,15 +7,7 @@ var db = exports.db = new Datastore({
 });
 
 exports.saveActiveUser = function (data, callback) {
-	exports.getActiveUser(function (err, doc) {
-		if (err) {
-			return callback(err);
-		}
-		if (!doc) {
-			return db.insert(data, callback);
-		}
-		db.update({ active: true }, data, callback);
-	});
+	db.update({ active: true }, data, { upsert: true }, callback);
 };
 
 exports.getActiveUser = function (callback) {
