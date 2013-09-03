@@ -19,7 +19,7 @@ var logout = function () {
 };
 
 logout.usage = [
-	'The ' + '`tweet logout`'.magenta + ' command unauthorize',
+	'The ' + '`tweet logout`'.magenta + ' command unauthorizes',
 	'your @twitter account from node-tweet-cli',
 	'',
 	'Usage:'.cyan.bold.underline,
