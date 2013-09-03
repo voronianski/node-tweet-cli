@@ -1,4 +1,5 @@
 var request = require('request');
+var cli = require('../cli');
 
 var API = 'https://api.twitter.com/1.1';
 
@@ -20,8 +21,8 @@ exports.post = function (tweet, user, options, callback) {
 	var headers = { 'Content-Type': 'application/json', 'User-Agent': 'node-tweet-cli' };
 
 	var oauth = {
-		consumer_key: 'aTiLjvl8MuW9MG12DXng',
-		consumer_secret: 'b2ceLIWbvrO6Xj8VkZ6NxPIwu3e4dHSSvHa0QjGA',
+		consumer_key: cli.config.get('consumerKey'),
+		consumer_secret: cli.config.get('consumerSecret'),
 		token: user.accessToken,
 		token_secret: user.accessTokenSecret
 	};

@@ -12,6 +12,10 @@ var app = module.exports = flatiron.app;
 
 require('pkginfo')(module, 'name', 'version');
 
+app.config.file({ file: path.join(__dirname, '..', 'config.json') });
+
+console.log(app.config);
+
 app.use(flatiron.plugins.cli, {
 	version: true,
 	usage: require('./common/usage.js'),

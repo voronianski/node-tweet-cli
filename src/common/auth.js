@@ -1,10 +1,11 @@
 var OAuth = require('oauth').OAuth;
+var cli = require('../cli');
 
 var oauth = new OAuth(
 	'http://api.twitter.com/oauth/request_token',
 	'http://api.twitter.com/oauth/access_token',
-	'aTiLjvl8MuW9MG12DXng',
-	'b2ceLIWbvrO6Xj8VkZ6NxPIwu3e4dHSSvHa0QjGA',
+	cli.config.get('consumerKey'),
+	cli.config.get('consumerSecret'),
 	'1.0',
 	null,
 	'HMAC-SHA1'
