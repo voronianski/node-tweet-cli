@@ -7,7 +7,7 @@ Small tool that allows to tweet from bash, zhs, whatever..
 Install module globally:
 
 ```bash
-$: npm install -g node-tweet-cli
+npm install -g node-tweet-cli
 ```
 
 You will be able to use ``tweet`` command in your shell.
