@@ -1,6 +1,6 @@
 # node-tweet-cli
 
-Small tool that will help you make tweets from your console.
+Small tool that allows to tweet from bash, zhs, whatever..
 
 ## How to use it
 
@@ -10,22 +10,17 @@ Install module globally:
 $: npm install -g node-tweet-cli
 ```
 
-You will be able to use ``tweet`` commands in your shell.
+You will be able to use ``tweet`` command in your shell.
 
-Authorize with your twitter account and start tweeting from bash, zhs, whatever :)
+Start with authorizing your twitter account and start tweeting :)
 
 ## Commands to use
 
-There are few commands here:
+There are description of available commands here:
 
 ### tweet login
 
-The ``tweet login`` command manages such flow:
-
-1. It redirects you to ``http://twitter.com/oauth/authorize?oauth_token=..``
-2. Authorize twitter and get a PIN
-3. Enter PIN in the terminal prompt
-4. Voilà! You are able to tweet from your terminal
+The ``tweet login`` command manages authorization flow. It redirects you to ``http://twitter.com/oauth/authorize?oauth_token=..`` where you need to login and get a PIN. Enter PIN in the terminal prompt and "voilà!" - you are able to tweet from your terminal.
 
 ```bash
 $: tweet login
@@ -33,7 +28,7 @@ $: tweet login
 
 ### tweet logout
 
-The ``tweet logout`` command unauthorizes your @twitter account from node-tweet-cli.'
+The ``tweet logout`` command unauthorizes your twitter account from node-tweet-cli.'
 
 ```bash
 $: tweet logout
@@ -41,7 +36,7 @@ $: tweet logout
 
 ### tweet create
 
-This command allows you to post tweets into your @twitter account. You will be prompted to type a message.
+This command allows you to post tweets into your twitter account. You will be prompted to type a message.
 
 ```bash
 $: tweet create
@@ -56,6 +51,9 @@ $: tweet whoami
 ```
 
 ## To do
+
+- Tests!
+- tweeting with images
 
 ## Contribution
 
