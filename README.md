@@ -23,31 +23,31 @@ There are description of available commands here:
 The ``tweet login`` command manages authorization flow. It redirects you to ``http://twitter.com/oauth/authorize?oauth_token=..`` where you need to login and get a PIN. Enter PIN in the terminal prompt and "voilà!" - you are able to tweet from your terminal.
 
 ```bash
-$: tweet login
+tweet login
 ```
 
 ### tweet logout
 
-The ``tweet logout`` command unauthorizes your twitter account from node-tweet-cli.'
+The ``tweet logout`` command unauthorizes your twitter account from node-tweet-cli.
 
 ```bash
-$: tweet logout
+tweet logout
 ```
 
 ### tweet create
 
-This command allows you to post tweets into your twitter account. You will be prompted to type a message.
+The ``tweet create`` command allows you to post tweets into your twitter account. You will be prompted to type a message.
 
 ```bash
-$: tweet create
+tweet create
 ```
 
 ### tweet whoami
 
-This command simply shows current twitter account.
+The ``tweet whoami`` command shows current twitter account name.
 
 ```bash
-$: tweet whoami
+tweet whoami
 ```
 
 ## To do
