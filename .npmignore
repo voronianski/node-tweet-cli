@@ -1,3 +1,4 @@
 test
 node_modules
+.testuser.db
 *.log

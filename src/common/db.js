@@ -6,6 +6,13 @@ var db = exports.db = new Datastore({
 	autoload: true
 });
 
+exports.initDB = function (filePath, autoload) {
+	db = new Datastore({
+		filename: filePath,
+		autoload: autoload
+	});
+};
+
 exports.saveActiveUser = function (data, callback) {
 	db.update({ active: true }, data, { upsert: true }, callback);
 };

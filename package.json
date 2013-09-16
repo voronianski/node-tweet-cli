@@ -1,11 +1,11 @@
 {
   "name": "node-tweet-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Start making tweets from your shell directly",
   "main": "./src/cli.js",
   "bin": "./bin/tweet.js",
   "scripts": {
-    "test": ""
+    "test": "node_modules/.bin/mocha -R nyan ./test/spec"
   },
   "repository": "",
   "keywords": [
