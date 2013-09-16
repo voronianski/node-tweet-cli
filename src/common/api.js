@@ -17,7 +17,7 @@ exports.post = function (tweet, user, options, callback) {
 		options = {};
 	}
 
-	var uri = API + '/statuses/update.json?status=' + encodeURIComponent(tweet);
+	var uri = API + '/statuses/update.json?status=' + fullURIEncode(tweet);
 	var headers = { 'Content-Type': 'application/json', 'User-Agent': 'node-tweet-cli' };
 
 	var oauth = {
@@ -29,3 +29,7 @@ exports.post = function (tweet, user, options, callback) {
 
 	request.post({ uri: uri, headers: headers, oauth: oauth, json: true }, callback);
 };
+
+function fullURIEncode (str) {
+	return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2A');
+}

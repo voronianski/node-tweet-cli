@@ -21,7 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "flatiron": "~0.3.8",
-    "nedb": "~0.8.6",
+    "nedb": "~0.8.8",
     "colors": "~0.6.2",
     "userhome": "~0.1.0",
     "pkginfo": "~0.3.0",
