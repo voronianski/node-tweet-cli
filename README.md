@@ -2,6 +2,8 @@
 
 Small tool that allows to tweet from bash, zhs, whatever..
 
+<script type="text/javascript" src="http://asciinema.org/a/5633.js" id="asciicast-5633" async></script>
+
 ## How to use it
 
 Install module globally:
