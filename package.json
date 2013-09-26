@@ -5,7 +5,7 @@
   "main": "./src/cli.js",
   "bin": "./bin/tweet.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha -R nyan ./test/unit"
+    "test": "node_modules/.bin/mocha ./test/"
   },
   "keywords": [
     "twitter",

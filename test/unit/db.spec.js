@@ -1,3 +1,4 @@
+/* database methods spec */
 var should = require('should');
 
 describe('./src/common/db.js', function () {
@@ -111,5 +112,4 @@ describe('./src/common/db.js', function () {
 			});
 		});
 	});
-
 });
