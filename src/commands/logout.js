@@ -9,7 +9,7 @@ var logout = function () {
 		}
 
 		if (!num) {
-			cli.log.warn('There is no twitter to unauthorize!');
+			cli.log.warn('There is no twitter account to unauthorize!');
 			cli.log.info('Use ' + '`tweet login`'.magenta + ' command to be able to create tweets.');
 			return;
 		}

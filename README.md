@@ -52,7 +52,6 @@ tweet whoami
 
 ## To do
 
-- Tests!
 - tweeting with images
 
 ## Contribution

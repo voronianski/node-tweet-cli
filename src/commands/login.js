@@ -17,7 +17,9 @@ var login = function () {
 		cli.log.info('Success! Please visit this link in your favourite browser:');
 		cli.log.info(url.grey);
 
-		opener(url);
+		if (process.env.NODE_ENV !== 'test') {
+			opener(url);
+		}
 
 		cli.log.info('Enter received PIN below:');
 		cli.prompt.get('pin', function (err, result) {

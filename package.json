@@ -3,7 +3,10 @@
   "version": "0.0.2",
   "description": "Start making tweets from your shell directly",
   "main": "./src/cli.js",
-  "bin": "./bin/tweet.js",
+  "bin": {
+    "tweet": "./bin/tweet.js"
+  },
+  "preferGlobal": true,
   "scripts": {
     "test": "node_modules/.bin/mocha ./test/"
   },
@@ -16,8 +19,15 @@
     "bash",
     "zsh"
   ],
-  "author": "Dmitri Voronianski",
+  "author": {
+    "name": "Dmitri Voronianski",
+    "email": "dmitri.voronianski@gmail.com",
+    "web": "http://pixelhunter.me",
+    "twitter": "voronianski"
+  },
+  "readmeFilename": "README.md",
   "license": "MIT",
+  "bugs": "https://github.com/voronianski/node-tweet-cli/issues",
   "repository": {
     "type": "git",
     "url": "git://github.com/voronianski/node-tweet-cli.git"
