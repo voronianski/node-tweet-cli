@@ -56,5 +56,7 @@ tweet whoami
 
 ## Contribution
 
+If you have suggestions or found a bug please create an issue [here](https://github.com/voronianski/node-tweet-cli/issues). Thanks!
+
 ---
 (c) 2013 MIT License
