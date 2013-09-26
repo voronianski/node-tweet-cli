@@ -5,9 +5,8 @@
   "main": "./src/cli.js",
   "bin": "./bin/tweet.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha -R nyan ./test/spec"
+    "test": "node_modules/.bin/mocha -R nyan ./test/unit"
   },
-  "repository": "",
   "keywords": [
     "twitter",
     "tweet",
@@ -19,6 +18,10 @@
   ],
   "author": "Dmitri Voronianski",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voronianski/node-tweet-cli.git"
+  },
   "dependencies": {
     "flatiron": "~0.3.8",
     "nedb": "~0.8.8",
