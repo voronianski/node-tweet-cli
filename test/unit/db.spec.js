@@ -15,6 +15,23 @@ describe('./src/common/db.js', function () {
 		dbFactory.initDB('./.testuser.db', true);
 	});
 
+	before(function (done) {
+		console.log('cleaning test db');
+		dbFactory.db.remove({}, { multi: true }, function (err) {
+			if (err) {
+				return done(err);
+			}
+
+			dbFactory.db.loadDatabase(function (err) {
+				if (err) {
+					return done(err);
+				}
+				console.log('test db is clean now');
+				done();
+			});
+		});
+	});
+
 	beforeEach(function () {
 		userData = {
 			accessToken: 'abcde12345',
