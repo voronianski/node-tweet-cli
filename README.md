@@ -36,7 +36,7 @@ The ``tweet logout`` command unauthorizes your twitter account from node-tweet-c
 tweet logout
 ```
 
-### tweet create
+### tweet create (or tweet new)
 
 The ``tweet create`` command allows you to post tweets into your twitter account. You will be prompted to type a message.
 
