@@ -44,6 +44,12 @@ The ``tweet create`` command allows you to post tweets into your twitter account
 tweet create
 ```
 
+or alias:
+
+```bash
+tweet new
+```
+
 ### tweet whoami
 
 The ``tweet whoami`` command shows current twitter account name.
