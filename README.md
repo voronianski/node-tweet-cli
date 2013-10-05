@@ -1,5 +1,7 @@
 # node-tweet-cli
 
+[![NPM](https://nodei.co/npm/node-tweet-cli.png?downloads=true)](https://nodei.co/npm/node-tweet-cli/)
+
 Small tool that allows to tweet from bash, zhs, whatever..
 
 http://ascii.io/a/5633
