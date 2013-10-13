@@ -36,6 +36,10 @@ module.exports = [
 	' tweet create',
 	'',
 
+	'To start tweeting from STDIN'.cyan,
+	' tweet read',
+	'',
+
 	'To check what account do you use'.cyan,
 	' tweet whoami'
 ];
