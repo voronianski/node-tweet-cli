@@ -4,21 +4,24 @@ var db = require('../common/db');
 var errorHandler = require('../common/errors');
 var readline = require('readline');
 
-var create = function () {
+var readTweet = function () {
   db.getActiveUser(function (err, user) {
     if (err) {
       return errorHandler(err);
     }
 
     if (!user) {
-      cli.log.warn('Please login with ' + '`tweet login`'.magenta + ' command to be able to create tweets.');
+      cli.log.warn('Please login with ' +
+        '`tweet login`'.magenta +
+          ' command first, before trying to tweet.');
       process.exit();
     }
     /**
      * Asynchronously posts to Twitter.
      *
      * @param {string} tweet
-     *     Message to be posted. Note: should be no greater than 140 characters.
+     *     Message to be posted. Note: should be no greater than 140
+     *     characters.
      */
     var postTweet = function (tweet) {
       api.post(tweet, user, function (err, response, body) {
@@ -46,13 +49,15 @@ var create = function () {
   });
 };
 
-create.usage = [
-  'The ' + '`tweet create`'.magenta + ' command allows you to post tweets',
-  'into your @twitter account',
-  '',
+readTweet.usage = [
+  'The ' + '`tweet read`'.magenta + ' command is identical to ',
+  '`create`'.magenta + ', but reads from stdin, enabling use with scripting.',
+  'eg: ' + '`your_script | tweet read`'.magenta
+
   'Usage:'.cyan.bold.underline,
   '',
-  ' tweet create'
+  ' echo "usage test" | tweet read'
+  ' tweet read < someInput'
 ];
 
-module.exports = create;
+module.exports = readTweet;
