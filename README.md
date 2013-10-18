@@ -56,16 +56,15 @@ tweet new
 
 The ``tweet read`` command posts message to twitter but reads it from ``stdin``, enabling use with scripting.
 
-Examples:
-
 ```bash
 echo "your tweet message" | tweet read
 ```
 
+or
+
 ```bash
 tweet read < yourInputFile
 ```
-
 
 ### tweet whoami
 
