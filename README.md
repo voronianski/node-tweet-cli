@@ -52,6 +52,20 @@ or alias:
 tweet new
 ```
 
+### tweet read
+
+The ``tweet read`` command posts message to twitter but reads it from ``stdin``, enabling use with scripting.
+
+```bash
+echo "your tweet message" | tweet read
+```
+
+or
+
+```bash
+tweet read < yourInputFile
+```
+
 ### tweet whoami
 
 The ``tweet whoami`` command shows current twitter account name.

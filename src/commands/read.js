@@ -15,14 +15,10 @@ var read = function () {
 			process.exit();
 		}
 
-		var rl = readline.createInterface({
-			input: process.stdin,
-			output: process.stdout
-		});
+		var rl = readline.createInterface(process.stdin, process.stdout);
 
 		rl.on('line', function (tweet) {
 			postTweet(tweet.slice(0, 140));
-			rl.close();
 		});
 
 		function postTweet (tweet) {
@@ -30,7 +26,8 @@ var read = function () {
 				if (err) {
 					return errorHandler(err);
 				}
-				cli.log.info('Success! Your tweet was published.');
+				cli.log.info('Success! Your tweet was published from ' + 'stdin'.magenta + '.');
+				rl.close();
 			});
 		}
 	});
