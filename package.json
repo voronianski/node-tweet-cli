@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "mocha": "~1.12.0",
-    "should": "~1.2.2"
+    "should": "~1.2.2",
+    "nixt": "0.0.4"
   }
 }
