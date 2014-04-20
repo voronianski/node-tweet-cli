@@ -8,7 +8,7 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "test": "node_modules/.bin/mocha ./test/"
+    "test": "./node_modules/mocha/bin/mocha ./test/"
   },
   "keywords": [
     "twitter",
