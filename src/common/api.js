@@ -1,7 +1,9 @@
 var request = require('request');
 var cli = require('../cli');
+var es = require('event-stream');
 
 var API = 'https://api.twitter.com/1.1';
+var STREAMAPI = 'https://stream.twitter.com/1.1';
 
 exports.post = function (tweet, user, options, callback) {
 	if (!tweet || typeof tweet !== 'string') {
@@ -28,6 +30,41 @@ exports.post = function (tweet, user, options, callback) {
 	};
 
 	request.post({ uri: uri, headers: headers, oauth: oauth, json: true }, callback);
+};
+
+exports.stream = function(query, user, options, callback) {
+	if (!query || typeof query !== 'string') {
+		return callback('Query is not specified.');
+	}
+
+	if (!user) {
+		return callback('Twitter account is not specified.');
+	}
+
+	if (typeof options === 'function') {
+		callback = options;
+		options = {};
+	}
+
+	var uri = STREAMAPI + '/statuses/filter.json?track=' + fullURIEncode(query);
+	var headers = { 'Content-Type': 'application/json', 'User-Agent': 'node-tweet-cli' };
+
+	var oauth = {
+		consumer_key: cli.config.get('consumerKey'),
+		consumer_secret: cli.config.get('consumerSecret'),
+		token: user.accessToken,
+		token_secret: user.accessTokenSecret
+	};
+
+	request.post({ uri: uri, headers: headers, oauth: oauth, json: true })
+	.on('error',callback)
+	.pipe(es.map(function(buffer,cb) {
+		cb(null, buffer.toString('utf8'))
+	}))
+	.pipe(es.split(JSON.parse))
+	.on('data',function(data) {
+		callback(null,data);
+	});
 };
 
 function fullURIEncode (str) {
