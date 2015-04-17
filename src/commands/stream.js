@@ -2,6 +2,7 @@ var cli = require('../cli');
 var api = require('../common/api');
 var db = require('../common/db');
 var errorHandler = require('../common/errors');
+var colors = require('colors');
 
 var stream = function (query) {
     db.getActiveUser(function (err, user) {
@@ -15,20 +16,15 @@ var stream = function (query) {
         }
 
 
-        api.stream(query, user, function(err, tweet) {
-            if (err) {
-                return errorHandler(err);
-            }
-            if (tweet.user) {
-                var obj = {
-                    id: tweet.id,
-                    user: tweet.user.screen_name,
-                    text: tweet.text,
-                };
+        api.stream(query, user, function(tweet) {
+            if (tweet && tweet.user) {
                 if (cli.argv.json) {
-                    console.log(JSON.stringify(obj));
+                    console.log(JSON.stringify(tweet));
                 } else {
-                    console.log('@'+obj.user+':',obj.text.replace(/[\n\r]+/g,''));
+                    console.log(
+                        ('@'+tweet.user.screen_name+':').cyan.bold,
+                        tweet.text.replace(/[\n\r]+/g,'')
+                    );
                 }
             }
         });

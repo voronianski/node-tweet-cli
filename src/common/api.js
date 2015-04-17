@@ -57,13 +57,20 @@ exports.stream = function(query, user, options, callback) {
 	};
 
 	request.post({ uri: uri, headers: headers, oauth: oauth, json: true })
-	.on('error',callback)
 	.pipe(es.map(function(buffer,cb) {
 		cb(null, buffer.toString('utf8'))
 	}))
-	.pipe(es.split(JSON.parse))
+	.pipe(es.split(function(str) {
+		//silently skip parsing errors to keep the stream running
+		try {
+			return JSON.parse(str);
+		} catch(e) {
+			process.stderr.write('error parsing:'+str+'\n');
+			return;
+		}
+	}))
 	.on('data',function(data) {
-		callback(null,data);
+		callback(data);
 	});
 };
 
