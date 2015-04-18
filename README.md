@@ -74,6 +74,22 @@ The ``tweet whoami`` command shows current twitter account name.
 tweet whoami
 ```
 
+### tweet stream <query> [options]
+
+Streams tweets to the console, optionally as json.
+
+```bash
+tweet stream twitter
+```
+
+or
+
+```bash
+tweet stream twitter --json
+```
+
+**Warning** The latter option dumps *a lot* of json in your console. Make sure your console is able to keep up, or (preferably) pipe to another utility. The latter is actually the use case this option is designed for.
+
 ## To do
 
 - tweeting with images
