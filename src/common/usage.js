@@ -40,6 +40,13 @@ module.exports = [
 	' tweet read',
 	'',
 
+	'To start streaming from twitter'.cyan,
+	' tweet stream "keyword"',
+	'or'.cyan,
+	' tweet stream "keyword" --json',
+	'Warning: The latter option dumps a lot of json in your console.',
+	'',
+
 	'To check what account do you use'.cyan,
 	' tweet whoami'
 ];
