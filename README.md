@@ -90,6 +90,20 @@ tweet stream twitter --json
 
 **Warning** The latter option dumps *a lot* of json in your console. Make sure your console is able to keep up, or (preferably) pipe to another utility. The latter is actually the use case this option is designed for.
 
+### tweet timeline [options]
+
+Streams your timeline to the console, optionally as json.
+
+```bash
+tweet timeline
+```
+
+or
+
+```bash
+tweet timeline --json
+```
+
 ## To do
 
 - tweeting with images
