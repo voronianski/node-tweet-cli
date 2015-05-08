@@ -113,4 +113,4 @@ tweet timeline --json
 If you have suggestions or found a bug please create an issue [here](https://github.com/voronianski/node-tweet-cli/issues). Thanks!
 
 ---
-(c) 2013 MIT License
+(c) 2013-2015 MIT License
