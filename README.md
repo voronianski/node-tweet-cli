@@ -1,7 +1,8 @@
 # node-tweet-cli
 
 [![build status](http://img.shields.io/travis/voronianski/node-tweet-cli.svg)](https://travis-ci.org/voronianski/node-tweet-cli)
-[![NPM](https://nodei.co/npm/node-tweet-cli.png?downloads=true)](https://nodei.co/npm/node-tweet-cli/)
+[![npm version](http://badge.fury.io/js/node-tweet-cli.svg)](http://badge.fury.io/js/node-tweet-cli)
+[![Download Count](https://img.shields.io/npm/dm/ng-dialog.svg)](http://www.npmjs.com/package/node-tweet-cli)
 
 Small tool that allows to tweet from bash, zsh, whatever..
 
