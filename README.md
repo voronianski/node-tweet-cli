@@ -8,7 +8,7 @@ Small tool that allows to tweet from bash, zsh, whatever..
 
 http://ascii.io/a/5633
 
-<img src="http://38.media.tumblr.com/6b3cef8108e46dc8faa7527afcdbb626/tumblr_inline_mvspg1d3qY1qfhayr.gif" width="300" />
+<img src="http://38.media.tumblr.com/6b3cef8108e46dc8faa7527afcdbb626/tumblr_inline_mvspg1d3qY1qfhayr.gif" width="500" />
 
 ## How to use it
 
