@@ -4,7 +4,7 @@
 [![npm version](http://badge.fury.io/js/node-tweet-cli.svg)](http://badge.fury.io/js/node-tweet-cli)
 [![Download Count](https://img.shields.io/npm/dm/node-tweet-cli.svg)](http://www.npmjs.com/package/node-tweet-cli)
 
-Small tool that allows to tweet from bash, zsh, whatever..
+> Small node.js cli tool that allows to tweet from bash, zsh, whatever..
 
 http://ascii.io/a/5633
 
