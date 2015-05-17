@@ -66,7 +66,8 @@ exports.stream = function (query, user, options, callback) {
         try {
             return JSON.parse(str);
         } catch(e) {
-            cli.log.error('Parsing error:' + str + '\n');
+            if(str!="")
+                cli.log.error('Parsing error:' + str + '\n');
         }
     }))
     .on('data', function(data) {
@@ -103,7 +104,8 @@ exports.timeline = function (user, options, callback) {
         try {
             return JSON.parse(str);
         } catch(e) {
-            cli.log.error('Parsing error:' + str + '\n');
+            if(str!="")
+                cli.log.error('Parsing error:' + str + '\n');
         }
     }))
     .on('data', function(data) {
