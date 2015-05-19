@@ -66,12 +66,12 @@ exports.stream = function (query, user, options, callback) {
         try {
             return JSON.parse(str);
         } catch(e) {
-            if(str!==''){
+            if (str !== '') {
                 cli.log.error('Parsing error:' + str + '\n');
             }
         }
     }))
-    .on('data', function(data) {
+    .on('data', function (data) {
         callback(data);
     });
 };
@@ -100,17 +100,17 @@ exports.timeline = function (user, options, callback) {
     .pipe(es.map(function (buffer, cb) {
         cb(null, buffer.toString('utf8'));
     }))
-    .pipe(es.split(function(str) {
+    .pipe(es.split(function (str) {
         //silently skip parsing errors to keep the stream running
         try {
             return JSON.parse(str);
         } catch(e) {
-            if(str!==''){
+            if (str !== '') {
                 cli.log.error('Parsing error:' + str + '\n');
             }
         }
     }))
-    .on('data', function(data) {
+    .on('data', function (data) {
         callback(data);
     });
 };
