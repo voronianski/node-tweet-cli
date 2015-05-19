@@ -1,6 +1,6 @@
 {
   "name": "node-tweet-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "make tweets from your shell",
   "main": "./src/cli.js",
   "bin": {
