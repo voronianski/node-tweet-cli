@@ -3,7 +3,7 @@ var api = require('../common/api');
 var db = require('../common/db');
 var errorHandler = require('../common/errors');
 
-var create = function () {
+var create = function (query) {
     db.getActiveUser(function (err, user) {
         if (err) {
             return errorHandler(err);
@@ -14,23 +14,37 @@ var create = function () {
             process.exit();
         }
 
-        cli.log.info('Type your tweet below (max 140 symbols):');
-        cli.prompt.get('tweet', function (err, result) {
-            if (err) {
-                return errorHandler(err);
-            }
+        if (!query || typeof query !== 'string') {
+          cli.log.info('Type your tweet below (max 140 symbols):');
+          cli.prompt.get('tweet', function (err, result) {
+              if (err) {
+                  return errorHandler(err);
+              }
 
-            api.post(result.tweet.toString(), user, function (err, response, body) {
-                if (err) {
-                    return errorHandler(err);
-                }
-                if (body.errors) {
-                    err = body.errors[0];
-                    return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 140 characters.' : null));
-                }
-                cli.log.info('Success! Your tweet was published.');
-            });
-        });
+              api.post(result.tweet.toString(), user, function (err, response, body) {
+                  if (err) {
+                      return errorHandler(err);
+                  }
+                  if (body.errors) {
+                      err = body.errors[0];
+                      return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 140 characters.' : null));
+                  }
+                  cli.log.info('Success! Your tweet was published.');
+              });
+          });
+        }else{
+          api.post(query, user, function (err, response, body) {
+              if (err) {
+                  return errorHandler(err);
+              }
+              
+              if (body.errors) {
+                  err = body.errors[0];
+                  return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 140 characters.' : null));
+              }
+              cli.log.info('Success! Your tweet was published.');
+          });
+        }
     });
 };
 
