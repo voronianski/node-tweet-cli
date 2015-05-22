@@ -32,12 +32,12 @@ var create = function (query) {
                   cli.log.info('Success! Your tweet was published.');
               });
           });
-        }else{
+        } else {
           api.post(query, user, function (err, response, body) {
               if (err) {
                   return errorHandler(err);
               }
-              
+
               if (body.errors) {
                   err = body.errors[0];
                   return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 140 characters.' : null));
