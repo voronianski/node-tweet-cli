@@ -50,6 +50,8 @@ module.exports = [
     'To start streaming your timeline'.cyan,
     ' tweet timeline',
     'or'.cyan,
+    ' tweet timeline --keep-new-lines',
+    'or'.cyan,
     ' tweet timeline --json',
     'Warning: The latter option dumps a lot of json in your console.',
     '',
