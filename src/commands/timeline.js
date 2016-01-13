@@ -16,16 +16,19 @@ var stream = function () {
 
 
         api.timeline(user, function(tweet) {
-            if (tweet && tweet.user) {
-                if (cli.argv.json) {
-                    console.log(JSON.stringify(tweet));
-                } else {
-                    console.log(
-                        ('@' + tweet.user.screen_name + ':').cyan.bold,
-                        tweet.text.replace(/[\n\r]+/g, '')
-                    );
-                }
+            if (!tweet || !tweet.user) {
+                return;
             }
+
+            if (cli.argv.json) {
+                console.log(JSON.stringify(tweet));
+                return;
+            }
+
+            var tweetUserName = ('@' + tweet.user.screen_name + ':').cyan.bold;
+            var tweetText = cli.argv['keep-new-lines'] ? tweet.text : tweet.text.replace(/[\n\r]+/g, '¬');
+
+            console.log(tweetUserName, tweetText);
         });
     });
 };
