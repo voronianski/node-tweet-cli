@@ -15,7 +15,7 @@ var create = function (query) {
         }
 
         if (!query || typeof query !== 'string') {
-          cli.log.info('Type your tweet below (max 140 symbols):');
+          cli.log.info('Type your tweet below (max 280 symbols):');
           cli.prompt.get('tweet', function (err, result) {
               if (err) {
                   return errorHandler(err);
@@ -27,7 +27,7 @@ var create = function (query) {
                   }
                   if (body.errors) {
                       err = body.errors[0];
-                      return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 140 characters.' : null));
+                      return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 280 characters.' : null));
                   }
                   cli.log.info('Success! Your tweet was published.');
               });
@@ -40,7 +40,7 @@ var create = function (query) {
 
               if (body.errors) {
                   err = body.errors[0];
-                  return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 140 characters.' : null));
+                  return errorHandler(err, (err.code === 186 ? 'Oops! Your tweet is over 280 characters.' : null));
               }
               cli.log.info('Success! Your tweet was published.');
           });
